@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9558271B1FD68F59003F75D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558271A1FD68F59003F75D6 /* AppDelegate.m */; };
+		9558271E1FD68F59003F75D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558271D1FD68F59003F75D6 /* ViewController.m */; };
+		955827211FD68F59003F75D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9558271F1FD68F59003F75D6 /* Main.storyboard */; };
+		955827231FD68F59003F75D6 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955827221FD68F59003F75D6 /* Asset.xcassets */; };
+		955827261FD68F59003F75D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955827241FD68F59003F75D6 /* LaunchScreen.storyboard */; };
+		955827291FD68F59003F75D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 955827281FD68F59003F75D6 /* main.m */; };
+		955827331FD68F59003F75D6 /* YLCustomMapViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 955827321FD68F59003F75D6 /* YLCustomMapViewTests.m */; };
+		9558273E1FD68F59003F75D6 /* YLCustomMapViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558273D1FD68F59003F75D6 /* YLCustomMapViewUITests.m */; };
+		9558274D1FD69A95003F75D6 /* CustomInTurnAnnotationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558274C1FD69A95003F75D6 /* CustomInTurnAnnotationModel.m */; };
+		955827501FD69B28003F75D6 /* CustomInTurnAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558274F1FD69B28003F75D6 /* CustomInTurnAnnotationView.m */; };
+		F09239D872ADE1EC0F7DD990 /* libPods-YLCustomMapView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3805D46DCC4192776CCF3AD1 /* libPods-YLCustomMapView.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9558272F1FD68F59003F75D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9558270E1FD68F59003F75D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 955827151FD68F59003F75D6;
+			remoteInfo = YLCustomMapView;
+		};
+		9558273A1FD68F59003F75D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9558270E1FD68F59003F75D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 955827151FD68F59003F75D6;
+			remoteInfo = YLCustomMapView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3805D46DCC4192776CCF3AD1 /* libPods-YLCustomMapView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YLCustomMapView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		858A53E0DBC500901EA89A42 /* Pods-YLCustomMapView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLCustomMapView.release.xcconfig"; path = "Pods/Target Support Files/Pods-YLCustomMapView/Pods-YLCustomMapView.release.xcconfig"; sourceTree = "<group>"; };
+		955827161FD68F59003F75D6 /* YLCustomMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLCustomMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		955827191FD68F59003F75D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9558271A1FD68F59003F75D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9558271C1FD68F59003F75D6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9558271D1FD68F59003F75D6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		955827201FD68F59003F75D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		955827221FD68F59003F75D6 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
+		955827251FD68F59003F75D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		955827271FD68F59003F75D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		955827281FD68F59003F75D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9558272E1FD68F59003F75D6 /* YLCustomMapViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YLCustomMapViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		955827321FD68F59003F75D6 /* YLCustomMapViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLCustomMapViewTests.m; sourceTree = "<group>"; };
+		955827341FD68F59003F75D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		955827391FD68F59003F75D6 /* YLCustomMapViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YLCustomMapViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9558273D1FD68F59003F75D6 /* YLCustomMapViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLCustomMapViewUITests.m; sourceTree = "<group>"; };
+		9558273F1FD68F59003F75D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9558274B1FD69A95003F75D6 /* CustomInTurnAnnotationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomInTurnAnnotationModel.h; sourceTree = "<group>"; };
+		9558274C1FD69A95003F75D6 /* CustomInTurnAnnotationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomInTurnAnnotationModel.m; sourceTree = "<group>"; };
+		9558274E1FD69B28003F75D6 /* CustomInTurnAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomInTurnAnnotationView.h; sourceTree = "<group>"; };
+		9558274F1FD69B28003F75D6 /* CustomInTurnAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomInTurnAnnotationView.m; sourceTree = "<group>"; };
+		9B0FABC914B3F2B1F20A2277 /* Pods-YLCustomMapView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLCustomMapView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YLCustomMapView/Pods-YLCustomMapView.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		955827131FD68F59003F75D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F09239D872ADE1EC0F7DD990 /* libPods-YLCustomMapView.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9558272B1FD68F59003F75D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		955827361FD68F59003F75D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		281E7978649D38BDE74F3C6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3805D46DCC4192776CCF3AD1 /* libPods-YLCustomMapView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9558270D1FD68F59003F75D6 = {
+			isa = PBXGroup;
+			children = (
+				955827181FD68F59003F75D6 /* YLCustomMapView */,
+				955827311FD68F59003F75D6 /* YLCustomMapViewTests */,
+				9558273C1FD68F59003F75D6 /* YLCustomMapViewUITests */,
+				955827171FD68F59003F75D6 /* Products */,
+				DC61E6A966FF6AA4E76B3EBF /* Pods */,
+				281E7978649D38BDE74F3C6A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		955827171FD68F59003F75D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				955827161FD68F59003F75D6 /* YLCustomMapView.app */,
+				9558272E1FD68F59003F75D6 /* YLCustomMapViewTests.xctest */,
+				955827391FD68F59003F75D6 /* YLCustomMapViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		955827181FD68F59003F75D6 /* YLCustomMapView */ = {
+			isa = PBXGroup;
+			children = (
+				955827191FD68F59003F75D6 /* AppDelegate.h */,
+				9558271A1FD68F59003F75D6 /* AppDelegate.m */,
+				9558271C1FD68F59003F75D6 /* ViewController.h */,
+				9558271D1FD68F59003F75D6 /* ViewController.m */,
+				9558274B1FD69A95003F75D6 /* CustomInTurnAnnotationModel.h */,
+				9558274C1FD69A95003F75D6 /* CustomInTurnAnnotationModel.m */,
+				9558274E1FD69B28003F75D6 /* CustomInTurnAnnotationView.h */,
+				9558274F1FD69B28003F75D6 /* CustomInTurnAnnotationView.m */,
+				9558271F1FD68F59003F75D6 /* Main.storyboard */,
+				955827221FD68F59003F75D6 /* Asset.xcassets */,
+				955827241FD68F59003F75D6 /* LaunchScreen.storyboard */,
+				955827271FD68F59003F75D6 /* Info.plist */,
+				955827281FD68F59003F75D6 /* main.m */,
+			);
+			path = YLCustomMapView;
+			sourceTree = "<group>";
+		};
+		955827311FD68F59003F75D6 /* YLCustomMapViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				955827321FD68F59003F75D6 /* YLCustomMapViewTests.m */,
+				955827341FD68F59003F75D6 /* Info.plist */,
+			);
+			path = YLCustomMapViewTests;
+			sourceTree = "<group>";
+		};
+		9558273C1FD68F59003F75D6 /* YLCustomMapViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9558273D1FD68F59003F75D6 /* YLCustomMapViewUITests.m */,
+				9558273F1FD68F59003F75D6 /* Info.plist */,
+			);
+			path = YLCustomMapViewUITests;
+			sourceTree = "<group>";
+		};
+		DC61E6A966FF6AA4E76B3EBF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B0FABC914B3F2B1F20A2277 /* Pods-YLCustomMapView.debug.xcconfig */,
+				858A53E0DBC500901EA89A42 /* Pods-YLCustomMapView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		955827151FD68F59003F75D6 /* YLCustomMapView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 955827421FD68F59003F75D6 /* Build configuration list for PBXNativeTarget "YLCustomMapView" */;
+			buildPhases = (
+				6F2C1B1BC5A326AF449627FA /* [CP] Check Pods Manifest.lock */,
+				955827121FD68F59003F75D6 /* Sources */,
+				955827131FD68F59003F75D6 /* Frameworks */,
+				955827141FD68F59003F75D6 /* Resources */,
+				B1BB97C00F5A6D7A86FEBB51 /* [CP] Embed Pods Frameworks */,
+				3963CF827B3888D76D199250 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YLCustomMapView;
+			productName = YLCustomMapView;
+			productReference = 955827161FD68F59003F75D6 /* YLCustomMapView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9558272D1FD68F59003F75D6 /* YLCustomMapViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 955827451FD68F59003F75D6 /* Build configuration list for PBXNativeTarget "YLCustomMapViewTests" */;
+			buildPhases = (
+				9558272A1FD68F59003F75D6 /* Sources */,
+				9558272B1FD68F59003F75D6 /* Frameworks */,
+				9558272C1FD68F59003F75D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				955827301FD68F59003F75D6 /* PBXTargetDependency */,
+			);
+			name = YLCustomMapViewTests;
+			productName = YLCustomMapViewTests;
+			productReference = 9558272E1FD68F59003F75D6 /* YLCustomMapViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		955827381FD68F59003F75D6 /* YLCustomMapViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 955827481FD68F59003F75D6 /* Build configuration list for PBXNativeTarget "YLCustomMapViewUITests" */;
+			buildPhases = (
+				955827351FD68F59003F75D6 /* Sources */,
+				955827361FD68F59003F75D6 /* Frameworks */,
+				955827371FD68F59003F75D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9558273B1FD68F59003F75D6 /* PBXTargetDependency */,
+			);
+			name = YLCustomMapViewUITests;
+			productName = YLCustomMapViewUITests;
+			productReference = 955827391FD68F59003F75D6 /* YLCustomMapViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9558270E1FD68F59003F75D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = csda_Chinadance;
+				TargetAttributes = {
+					955827151FD68F59003F75D6 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					9558272D1FD68F59003F75D6 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 955827151FD68F59003F75D6;
+					};
+					955827381FD68F59003F75D6 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 955827151FD68F59003F75D6;
+					};
+				};
+			};
+			buildConfigurationList = 955827111FD68F59003F75D6 /* Build configuration list for PBXProject "YLCustomMapView" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9558270D1FD68F59003F75D6;
+			productRefGroup = 955827171FD68F59003F75D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				955827151FD68F59003F75D6 /* YLCustomMapView */,
+				9558272D1FD68F59003F75D6 /* YLCustomMapViewTests */,
+				955827381FD68F59003F75D6 /* YLCustomMapViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		955827141FD68F59003F75D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955827261FD68F59003F75D6 /* LaunchScreen.storyboard in Resources */,
+				955827231FD68F59003F75D6 /* Asset.xcassets in Resources */,
+				955827211FD68F59003F75D6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9558272C1FD68F59003F75D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		955827371FD68F59003F75D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3963CF827B3888D76D199250 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YLCustomMapView/Pods-YLCustomMapView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F2C1B1BC5A326AF449627FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B1BB97C00F5A6D7A86FEBB51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YLCustomMapView/Pods-YLCustomMapView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		955827121FD68F59003F75D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9558271E1FD68F59003F75D6 /* ViewController.m in Sources */,
+				955827291FD68F59003F75D6 /* main.m in Sources */,
+				9558271B1FD68F59003F75D6 /* AppDelegate.m in Sources */,
+				955827501FD69B28003F75D6 /* CustomInTurnAnnotationView.m in Sources */,
+				9558274D1FD69A95003F75D6 /* CustomInTurnAnnotationModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9558272A1FD68F59003F75D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955827331FD68F59003F75D6 /* YLCustomMapViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		955827351FD68F59003F75D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9558273E1FD68F59003F75D6 /* YLCustomMapViewUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		955827301FD68F59003F75D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 955827151FD68F59003F75D6 /* YLCustomMapView */;
+			targetProxy = 9558272F1FD68F59003F75D6 /* PBXContainerItemProxy */;
+		};
+		9558273B1FD68F59003F75D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 955827151FD68F59003F75D6 /* YLCustomMapView */;
+			targetProxy = 9558273A1FD68F59003F75D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9558271F1FD68F59003F75D6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				955827201FD68F59003F75D6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		955827241FD68F59003F75D6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				955827251FD68F59003F75D6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		955827401FD68F59003F75D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		955827411FD68F59003F75D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		955827431FD68F59003F75D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B0FABC914B3F2B1F20A2277 /* Pods-YLCustomMapView.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEWBU2EJ25;
+				INFOPLIST_FILE = YLCustomMapView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it-zhongwu.YLCustomMapView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		955827441FD68F59003F75D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 858A53E0DBC500901EA89A42 /* Pods-YLCustomMapView.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEWBU2EJ25;
+				INFOPLIST_FILE = YLCustomMapView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it-zhongwu.YLCustomMapView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		955827461FD68F59003F75D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEWBU2EJ25;
+				INFOPLIST_FILE = YLCustomMapViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it-zhongwu.YLCustomMapViewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YLCustomMapView.app/YLCustomMapView";
+			};
+			name = Debug;
+		};
+		955827471FD68F59003F75D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEWBU2EJ25;
+				INFOPLIST_FILE = YLCustomMapViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it-zhongwu.YLCustomMapViewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YLCustomMapView.app/YLCustomMapView";
+			};
+			name = Release;
+		};
+		955827491FD68F59003F75D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEWBU2EJ25;
+				INFOPLIST_FILE = YLCustomMapViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it-zhongwu.YLCustomMapViewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YLCustomMapView;
+			};
+			name = Debug;
+		};
+		9558274A1FD68F59003F75D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEWBU2EJ25;
+				INFOPLIST_FILE = YLCustomMapViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it-zhongwu.YLCustomMapViewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YLCustomMapView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		955827111FD68F59003F75D6 /* Build configuration list for PBXProject "YLCustomMapView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955827401FD68F59003F75D6 /* Debug */,
+				955827411FD68F59003F75D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		955827421FD68F59003F75D6 /* Build configuration list for PBXNativeTarget "YLCustomMapView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955827431FD68F59003F75D6 /* Debug */,
+				955827441FD68F59003F75D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		955827451FD68F59003F75D6 /* Build configuration list for PBXNativeTarget "YLCustomMapViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955827461FD68F59003F75D6 /* Debug */,
+				955827471FD68F59003F75D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		955827481FD68F59003F75D6 /* Build configuration list for PBXNativeTarget "YLCustomMapViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955827491FD68F59003F75D6 /* Debug */,
+				9558274A1FD68F59003F75D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9558270E1FD68F59003F75D6 /* Project object */;
+}
