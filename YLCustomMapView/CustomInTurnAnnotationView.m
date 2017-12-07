@@ -64,14 +64,14 @@
                                      3*scale,
                                      CGRectGetWidth(self.backPic.frame) - 12*scale,
                                      CGRectGetHeight(self.backPic.frame) - 16*scale);
-
+    
     self.centerOffset      = CGPointMake(0 , -(width/2 - 5));
     UIImage *imageCicle = [UIImage imageNamed:@"running_point_icon_db_red"];// running_point_icon_db_grex
     if (ann.isSel)
     {
         imageCicle  = [UIImage imageNamed:@"running_point_icon_db_grex"];
     }
-    if (!ann.isSel && ann.isRadius==1)
+    if (ann.isRadius==1)
     {//开始动画
         [self.layer removeAnimationForKey:@"topbottom"];
         [self.layer addAnimation:self.animation forKey:@"topbottom"];
@@ -160,3 +160,4 @@
                           alpha:1.0f];
 }
 @end
+

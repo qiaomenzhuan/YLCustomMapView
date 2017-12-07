@@ -13,9 +13,11 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 #import "CustomInTurnAnnotationView.h"
 #import "CustomInTurnAnnotationModel.h"
-@interface ViewController ()<MAMapViewDelegate,AMapLocationManagerDelegate>
+@interface ViewController ()<MAMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MAMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton  *northBtn;
+@property (weak, nonatomic) IBOutlet UIButton *lineBtn;
+
 @property (nonatomic,strong) MAAnnotationView  *userLocationAnnotationView;//当前位置的自定义view
 @property (nonatomic,strong) NSMutableArray    *dataSourceAnnotations;//处理过的坐标数组
 @property (nonatomic,strong) NSMutableArray    *lines;//虚线数组
@@ -50,22 +52,30 @@
     self.mapView.delegate                 = self;
     self.mapView.userTrackingMode         = MAUserTrackingModeFollow;
     self.mapView.showsUserLocation        = YES;
-
+    
     MAUserLocationRepresentation *r   = [[MAUserLocationRepresentation alloc] init];
-    r.showsAccuracyRing               = NO;
-    r.showsHeadingIndicator           = NO;
-    r.fillColor                       = [[UIColor whiteColor] colorWithAlphaComponent:0.3];
-    r.strokeColor                     = [UIColor whiteColor];
-    r.lineWidth                       = 1;
     r.image = [UIImage imageNamed:@"none"];
     [self.mapView updateUserLocationRepresentation:r];
 }
+
 - (IBAction)myLocation:(id)sender {
     if(self.mapView.userLocation.updating && self.mapView.userLocation.location)
     {
         self.mapView.zoomLevel = 18;             //缩放级别（默认3-19)
         [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
         [self zoomData];
+    }
+}
+
+- (IBAction)line:(id)sender {
+    self.lineBtn.selected = !self.lineBtn.selected;
+    if (self.lineBtn.selected) {
+        [self.lineBtn setTitle:@"清除连线" forState:UIControlStateNormal];
+        [self.mapView addOverlays:self.lines];
+    }else
+    {
+        [self.lineBtn setTitle:@"依次连线" forState:UIControlStateNormal];
+        [self.mapView removeOverlays:self.lines];
     }
 }
 #pragma mark - MAMapViewDelegate
@@ -88,20 +98,21 @@
         [self locationData];
     }
 }
+
 //绘制虚线
-//- (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id <MAOverlay>)overlay
-//{
-//    if ([overlay isKindOfClass:[MAPolyline class]])
-//    {//连线 虚线
-//        MAPolylineRenderer *polylineRenderer = [[MAPolylineRenderer alloc] initWithPolyline:(MAPolyline *)overlay];
-//        polylineRenderer.lineWidth   = 1;
-//        polylineRenderer.strokeColor = [UIColor purpleColor];
-//        polylineRenderer.lineCapType = kCGLineCapSquare;
-//        polylineRenderer.lineDash    = YES;
-//        return polylineRenderer;
-//    }
-//    return nil;
-//}
+- (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id <MAOverlay>)overlay
+{
+    if ([overlay isKindOfClass:[MAPolyline class]])
+    {//连线 虚线
+        MAPolylineRenderer *polylineRenderer = [[MAPolylineRenderer alloc] initWithPolyline:(MAPolyline *)overlay];
+        polylineRenderer.lineWidth   = 1;
+        polylineRenderer.strokeColor = [UIColor purpleColor];
+        polylineRenderer.lineCapType = kCGLineCapSquare;
+        polylineRenderer.lineDash    = YES;
+        return polylineRenderer;
+    }
+    return nil;
+}
 
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
 {
@@ -141,6 +152,29 @@
         [self zoomData];
     }
 }
+
+- (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view
+{
+    if ([view isKindOfClass:[CustomInTurnAnnotationView class]])
+    {
+        //设置自定义点为地图中心
+        CustomInTurnAnnotationView *cusView = (CustomInTurnAnnotationView *)view;
+        CGPoint theCenter = cusView.center;
+        CLLocationCoordinate2D coordinate = [self.mapView convertPoint:theCenter toCoordinateFromView:self.mapView];
+        [self.mapView setCenterCoordinate:coordinate animated:YES];
+        //设置点跳动
+        CustomInTurnAnnotationModel *pointAnnotation = (CustomInTurnAnnotationModel *)cusView.annotation;
+        [self.mapView removeAnnotations:self.dataSourceAnnotations];
+        for (CustomInTurnAnnotationModel *point in self.dataSourceAnnotations) {
+            point.isRadius = 0;
+        }
+        pointAnnotation.isRadius = 1;
+        [self.mapView addAnnotations:self.dataSourceAnnotations];
+        
+        [self.mapView deselectAnnotation:pointAnnotation animated:YES];
+    }
+}
+
 - (void)zoomData
 {
     if (self.dataSourceAnnotations.count > 0)
@@ -149,7 +183,7 @@
     }
     
     for (CustomInTurnAnnotationModel *pointAnnotation in self.dataSourceAnnotations) {
-        pointAnnotation.scoreWid    = self.mapView.zoomLevel*4;
+        pointAnnotation.scoreWid    = (float)50.0*self.mapView.zoomLevel/18.0;
     }
     [self.mapView addAnnotations:self.dataSourceAnnotations];
 }
@@ -172,7 +206,7 @@
     double lng = self.mapView.userLocation.coordinate.longitude;
     NSArray *titleArr = @[@"高",@"德",@"地",@"图",@"很",@"牛",@"逼",@"🐂",@"B",@"🍌",@"55",@"我",@"要",@"消",@"灭",@"你"];
     NSMutableArray *arrLine = [NSMutableArray array];
-
+    
     for (int i = 0; i < titleArr.count; i ++) {
         double arcLat = lat + (double)(arc4random()%10 + 1)/6000.0f;
         double arcLng = lng + (double)(arc4random()%10 + 1)/6000.0f;
@@ -184,7 +218,7 @@
         }
         pointAnnotation.coordinate  = coor;
         pointAnnotation.titleStr    = [titleArr objectAtIndex:i];
-        pointAnnotation.scoreWid    = self.mapView.zoomLevel*4;
+        pointAnnotation.scoreWid    = (float)50.0*self.mapView.zoomLevel/18.0;
         [self.dataSourceAnnotations addObject:pointAnnotation];
     }
     
@@ -200,16 +234,17 @@
     }
     [self.mapView addAnnotations:self.dataSourceAnnotations];
     [self.lines addObjectsFromArray:arrLine];
-    [self.mapView addOverlays:self.lines];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.mapView showAnnotations:self.dataSourceAnnotations animated:YES];
     });
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 
 @end
+
