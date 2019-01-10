@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,10 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9n-Iw-Koc" customClass="MAMapView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8L-d8-Iwb">
                                 <rect key="frame" x="335" y="537" width="30" height="30"/>
                                 <constraints>
@@ -41,6 +37,22 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="running_icon_map"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6F-6l-zQy">
+                                <rect key="frame" x="30" y="50" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wo2-Mi-x1M"/>
+                                    <constraint firstAttribute="width" constant="100" id="zqI-NA-Up8"/>
+                                </constraints>
+                                <state key="normal" title="依次连线"/>
+                                <connections>
+                                    <action selector="line:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yUx-yd-BzR"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9n-Iw-Koc" customClass="MAMapView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -48,21 +60,26 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G8L-d8-Iwb" secondAttribute="trailing" constant="10" id="6RU-YC-gkE"/>
                             <constraint firstItem="n9n-Iw-Koc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CzO-mf-2Cp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G8L-d8-Iwb" secondAttribute="bottom" constant="100" id="DGS-Xq-4GS"/>
+                            <constraint firstItem="v6F-6l-zQy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="W5c-sC-jei"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="26r-pJ-tGu" secondAttribute="trailing" constant="10" id="Xk1-2T-5Sf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="n9n-Iw-Koc" secondAttribute="bottom" id="Xqi-12-Kkj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n9n-Iw-Koc" secondAttribute="trailing" id="lIE-Fx-k5z"/>
+                            <constraint firstItem="v6F-6l-zQy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="oUM-S7-5c0"/>
                             <constraint firstItem="n9n-Iw-Koc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="usA-xf-kuP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="SjW-fK-BUk"/>
                     <connections>
+                        <outlet property="lineBtn" destination="v6F-6l-zQy" id="3QB-l4-HXw"/>
+                        <outlet property="locationBtn" destination="G8L-d8-Iwb" id="liC-G4-e0M"/>
                         <outlet property="mapView" destination="n9n-Iw-Koc" id="G0i-BF-yuV"/>
                         <outlet property="northBtn" destination="26r-pJ-tGu" id="WrJ-UJ-OeK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="26.53673163418291"/>
         </scene>
     </scenes>
     <resources>

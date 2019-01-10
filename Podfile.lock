@@ -1,26 +1,16 @@
 PODS:
-  - AMap3DMap (5.0.0):
-    - AMapFoundation (~> 1.3)
-  - AMapFoundation (1.4.0)
-  - AMapLocation (2.3.1):
-    - AMapFoundation (~> 1.3)
-  - AMapSearch (5.0.0):
-    - AMapFoundation (~> 1.2)
-  - Masonry (0.6.4)
+  - Masonry (1.0.2)
 
 DEPENDENCIES:
-  - AMap3DMap
-  - AMapLocation
-  - AMapSearch
   - Masonry
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs:
+    - Masonry
+
 SPEC CHECKSUMS:
-  AMap3DMap: 4d0a53d0e57c7c758560225dfdaf593b306bd468
-  AMapFoundation: 458974f46a39df8407fd818ab83d2630d494c726
-  AMapLocation: 6016f0e09c127461c9c8e36945f34c0f037ad962
-  AMapSearch: cf7fd100d533995822d92c22586abfaf7cdf6eef
-  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
 
-PODFILE CHECKSUM: 10ea7f9d700827d6fc7924b7bfc964f12001ad35
+PODFILE CHECKSUM: 9fdda2b64c1b34ba5f3c79e05f4964af7da76a1d
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0

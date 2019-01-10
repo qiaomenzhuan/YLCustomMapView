@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <MAMapKit/MAMapKit.h>
-#import <AMapSearchKit/AMapSearchKit.h>
-#import <AMapLocationKit/AMapLocationKit.h>
 
 #define GAODE_API_KEY       @"3a7ff2d9de54f25c6982f12fd6936b29"
 @interface AppDelegate ()

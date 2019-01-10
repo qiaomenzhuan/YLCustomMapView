@@ -7,16 +7,20 @@
 //
 
 #import "ViewController.h"
-
+/*
+ 需要pod install
+ pod 'Masonry'
+ pod 'AMap3DMap'     #3D地图SDK
+ **/
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <MAMapKit/MAMapKit.h>
-#import <AMapLocationKit/AMapLocationKit.h>
 #import "CustomInTurnAnnotationView.h"
 #import "CustomInTurnAnnotationModel.h"
 @interface ViewController ()<MAMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MAMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton  *northBtn;
 @property (weak, nonatomic) IBOutlet UIButton *lineBtn;
+@property (weak, nonatomic) IBOutlet UIButton *locationBtn;
 
 @property (nonatomic,strong) MAAnnotationView  *userLocationAnnotationView;//当前位置的自定义view
 @property (nonatomic,strong) NSMutableArray    *dataSourceAnnotations;//处理过的坐标数组
@@ -37,47 +41,7 @@
     [super viewDidLoad];
     [self customMap];
 }
-- (void)customMap
-{
-    self.dataSourceAnnotations  = [NSMutableArray array];
-    self.lines                  = [NSMutableArray array];
-    
-    self.mapView.autoresizingMask         = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.mapView.rotateCameraEnabled      = NO;
-    self.mapView.rotateEnabled            = NO;
-    self.mapView.showsIndoorMap           = NO;
-    self.mapView.zoomLevel                = 18;
-    self.mapView.showsScale               = NO;
-    self.mapView.showsCompass             = NO;
-    self.mapView.delegate                 = self;
-    self.mapView.userTrackingMode         = MAUserTrackingModeFollow;
-    self.mapView.showsUserLocation        = YES;
-    
-    MAUserLocationRepresentation *r   = [[MAUserLocationRepresentation alloc] init];
-    r.image = [UIImage imageNamed:@"none"];
-    [self.mapView updateUserLocationRepresentation:r];
-}
 
-- (IBAction)myLocation:(id)sender {
-    if(self.mapView.userLocation.updating && self.mapView.userLocation.location)
-    {
-        self.mapView.zoomLevel = 18;             //缩放级别（默认3-19)
-        [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
-        [self zoomData];
-    }
-}
-
-- (IBAction)line:(id)sender {
-    self.lineBtn.selected = !self.lineBtn.selected;
-    if (self.lineBtn.selected) {
-        [self.lineBtn setTitle:@"清除连线" forState:UIControlStateNormal];
-        [self.mapView addOverlays:self.lines];
-    }else
-    {
-        [self.lineBtn setTitle:@"依次连线" forState:UIControlStateNormal];
-        [self.mapView removeOverlays:self.lines];
-    }
-}
 #pragma mark - MAMapViewDelegate
 
 - (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
@@ -108,7 +72,6 @@
         polylineRenderer.lineWidth   = 1;
         polylineRenderer.strokeColor = [UIColor purpleColor];
         polylineRenderer.lineCapType = kCGLineCapSquare;
-        polylineRenderer.lineDash    = YES;
         return polylineRenderer;
     }
     return nil;
@@ -175,6 +138,55 @@
     }
 }
 
+#pragma mark - action
+
+- (IBAction)myLocation:(id)sender {
+    if(self.mapView.userLocation.updating && self.mapView.userLocation.location)
+    {
+        self.mapView.zoomLevel = 18;             //缩放级别（默认3-19)
+        [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+        [self zoomData];
+    }
+}
+
+- (IBAction)line:(id)sender {
+    self.lineBtn.selected = !self.lineBtn.selected;
+    if (self.lineBtn.selected) {
+        [self.lineBtn setTitle:@"清除连线" forState:UIControlStateNormal];
+        [self.mapView addOverlays:self.lines];
+    }else
+    {
+        [self.lineBtn setTitle:@"依次连线" forState:UIControlStateNormal];
+        [self.mapView removeOverlays:self.lines];
+    }
+}
+
+#pragma mark - private
+- (void)customMap
+{
+    self.dataSourceAnnotations  = [NSMutableArray array];
+    self.lines                  = [NSMutableArray array];
+    
+    self.mapView.autoresizingMask         = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.mapView.rotateCameraEnabled      = NO;
+    self.mapView.rotateEnabled            = NO;
+    self.mapView.showsIndoorMap           = NO;
+    self.mapView.zoomLevel                = 18;
+    self.mapView.showsScale               = NO;
+    self.mapView.showsCompass             = NO;
+    self.mapView.delegate                 = self;
+    self.mapView.userTrackingMode         = MAUserTrackingModeFollow;
+    self.mapView.showsUserLocation        = YES;
+    
+    MAUserLocationRepresentation *r   = [[MAUserLocationRepresentation alloc] init];
+    r.image = [UIImage imageNamed:@"none"];
+    [self.mapView updateUserLocationRepresentation:r];
+    
+    [self.view bringSubviewToFront:self.lineBtn];
+    [self.view bringSubviewToFront:self.northBtn];
+    [self.view bringSubviewToFront:self.locationBtn];
+}
+
 - (void)zoomData
 {
     if (self.dataSourceAnnotations.count > 0)
@@ -187,9 +199,9 @@
     }
     [self.mapView addAnnotations:self.dataSourceAnnotations];
 }
-#pragma  mark - 构造数据
+
 - (void)locationData
-{
+{//构造数据
     if (self.dataSourceAnnotations.count > 0)
     {
         [self.mapView removeAnnotations:self.dataSourceAnnotations];
